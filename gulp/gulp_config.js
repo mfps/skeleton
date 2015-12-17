@@ -18,7 +18,7 @@ module.exports = function(){
       		all: app + '**/*.scss'
     	},
     	html: {
-    		all: ['app/*.html' ,app + '**/*.html']
+    		all: app + '**/*.html'
     	},
     	names: {
       		css: 'styles.min.css',
@@ -40,27 +40,24 @@ module.exports = function(){
     	index: app + 'index.html',
     	client: app,
     	env: process.env.NODE_ENV || 'development'
-    //	bower: {
-    //  		json: require('../bower.json'),
-    //  		directory: app + './vendor/',
-    //  		ignorePath: '../..'
-    //	}
 	}
 
 	if (paths.env==='development') {
-		paths.css.outputCSS = 'builds/development/';
-	    paths.sassStyle	 	= 'expanded';
-		paths.js.outputJS 	= 'builds/development/js/';
-		paths.outputImages 	= 'builds/development/images/';
-		paths.html.outputHTML	= 'builds/development/components/';
-		paths.images.outputImages	= 'builds/development/images/';
+      paths.outputDir     = 'builds/development/';
+  		paths.css.outputCSS = 'builds/development/';
+  	  paths.sassStyle	 	= 'expanded';
+  		paths.js.outputJS 	= 'builds/development/js/';
+  		paths.outputImages 	= 'builds/development/images/';
+  		paths.html.outputHTML	= 'builds/development/components/';
+  		paths.images.outputImages	= 'builds/development/images/';
 	} else {
+      paths.outputDir     = 'builds/production/';
 	  	paths.css.outputCSS = 'builds/production/';
 	  	paths.sassStyle 	= 'compressed';
 	  	paths.js.outputJS 	= 'builds/production/js/';
-		paths.outputImages 	= 'builds/production/images/';
-		paths.html.outputHTML	= 'builds/production/components/';
-		paths.images.outputImages	= 'builds/production/images/';
+		  paths.outputImages 	= 'builds/production/images/';
+		  paths.html.outputHTML	= 'builds/production/components/';
+		  paths.images.outputImages	= 'builds/production/images/';
 	}
 
 
