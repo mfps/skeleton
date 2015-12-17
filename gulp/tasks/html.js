@@ -6,9 +6,16 @@ var gulp		= require('gulp'),
     minifyHTML = require('gulp-minify-html');
 
 
-gulp.task('html', function() {
+gulp.task('html', ['index'], function() {
   	gulp.src(config.html.all)
 	    .pipe(minifyHTML())
 	    .pipe(gulp.dest(config.html.outputHTML))
+	    .pipe(connect.reload())
+});
+
+gulp.task('index', function() {
+  	gulp.src('app/index.html')
+	    .pipe(minifyHTML())
+	    .pipe(gulp.dest(config.outputDir))
 	    .pipe(connect.reload())
 });

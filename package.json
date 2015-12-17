@@ -4,11 +4,14 @@
   "description": "gulp automation skeleton",
   "main": "gulpfile.js",
   "dependencies": {
+    "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-load-plugins": "^1.1.0",
     "require-dir": "^0.3.0"
   },
   "devDependencies": {
+    "body-parser": "^1.14.2",
+    "connect-multiparty": "^2.0.0",
     "gulp-6to5": "^3.0.0",
     "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.0",
@@ -24,8 +27,11 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",
     "gulp-util": "^3.0.7",
+    "helmet": "^0.15.0",
     "imagemin-pngcrush": "^4.1.0",
-    "imagemin-pngquant": "^4.2.0"
+    "imagemin-pngquant": "^4.2.0",
+    "method-override": "^2.3.5",
+    "morgan": "^1.6.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
