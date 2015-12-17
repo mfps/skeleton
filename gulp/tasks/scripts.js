@@ -1,12 +1,12 @@
 var gulp     	= require('gulp'), 
 	concat     	= require('gulp-concat'), 
-//	rename     	= require('gulp-rename'), 
+    gutil 		= require('gulp-util'),
 	uglify     	= require('gulp-uglify'),
 	sourcemaps 	= require('gulp-sourcemaps'),
 	to5 		= require('gulp-6to5'),
-	browserify = require('gulp-browserify'),
-	gulpif = require('gulp-if'),
-	connect = require('gulp-connect'),
+	browserify 	= require('gulp-browserify'),
+	gulpif 		= require('gulp-if'),
+	connect 	= require('gulp-connect'),
 	config 		= require('../gulp_config')();
 
 
@@ -17,13 +17,7 @@ gulp.task('js', function() {
 	.pipe(sourcemaps.init({loadMaps: true}))
     .pipe(browserify())
     .pipe(uglify().on('error', errorHandler))
- //   .pipe(gulpif(config.env === 'production', uglify().on('error', errorHandler)))
-    .pipe(sourcemaps.write('./')).on('error', errorHandler)
-    .pipe(gulp.dest(config.js.outputJS)).on('error', errorHandler)
+    .pipe(sourcemaps.write('./')).on('error', gutil.log)
+    .pipe(gulp.dest(config.js.outputJS)).on('error', gutil.log)
     .pipe(connect.reload());
 });
-
-function errorHandler (error) {
-  console.log(error.toString());
-  this.emit('end');
-}

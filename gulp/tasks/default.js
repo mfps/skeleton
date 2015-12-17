@@ -4,5 +4,5 @@ var config = require('../gulp_config')(),
 
 
 
-gulp.task('default', ['js', 'styles']);
+gulp.task('default', ['js', 'styles', 'html', 'connect', 'watch']);
 

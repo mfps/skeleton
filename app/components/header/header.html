@@ -1,0 +1,58 @@
+<div class="navbar navbar-default navbar-static-top">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="/#/main"><i class="ion-ios7-pulse-strong"></i><span>media<strong>DB</strong></span></a>
+   </div>
+   
+  
+
+   <div class="dropdown headerSearch" is-open="nav.statusSearch.isopen">
+      <input  type="text" name="search" placeholder="Search" class="dropdown-toggle"        ng-model="nav.new.searchtitle" ng-change="nav.mainSearch(nav.new.searchtitle)">
+      <ul class="dropdown-menu" id="globalSearch" ng-show="nav.searching" style="height: auto; overflow: overlay;">                    
+         <li ng-if="nav.noresults">
+            <div class="searchText">No Results</div>
+         </li>
+         <li ng-repeat="search in nav.searchresults track by $index" 
+                  ng-click="newVideo.selectVideo(video.video, $index); toggleDropdown($event)">
+            <a href="#/view/{{search.mediatyp}}/{{search._id}}">
+               <div class="searchTyp">
+                  <p class="globalSearchType">{{search.mediatyp}}</p>
+               </div>
+               <div class="searchImg">
+                  <img ng-src="{{search.poster}}" alt="{{search.org_title}}"/>
+               </div>
+               <div ng-show="search.org_title"class="searchText">
+                  <p>{{search.org_title}}</p>
+                  <small>{{search.title}}</small>
+               </div>
+               <div ng-hide="search.org_title"class="searchText">{{search.artist}} - {{search.album}}</div>
+            </a>
+         </li>
+      </ul>
+   </div>
+
+
+
+
+{{ nav.relativeDate }}
+  <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
+                <li><a href="/#/login">Login</a></li>
+                <li><a href="/#/signup">Sign up</a></li>
+            </ul>
+            <ul ng-if="nav.isAuthenticated()" class="nav navbar-nav pull-right">
+                <li class="dropdown profile">
+                    <a href class="dropdown-toggle">
+                        Hallo {{userName}}<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <gravatar-image data-gravatar-email="nav.gravatarEmail" data-gravatar-size="120" data-gravatar-rating="pg" data-gravatar-default="404"
+                                            data-gravatar-secure="true" data-gravatar-css-class=""></gravatar-image>
+                        </li>
+                        <li ng-repeat="user in nav.profileDropdown">
+                            <a href="{{user.href}}">{{user.text}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+</div>
