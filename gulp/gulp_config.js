@@ -17,6 +17,9 @@ module.exports = function(){
     		entry: app + 'css/styles.scss',
       		all: app + '**/*.scss'
     	},
+    	html: {
+    		all: ['app/*.html' ,app + '**/*.html']
+    	},
     	names: {
       		css: 'styles.min.css',
       		js: {
@@ -30,6 +33,9 @@ module.exports = function(){
        			app: 'app.min.js',
         		vendor: 'vendor.min.js'
       		}
+    	},
+    	images: {
+    		all: app + 'images/**/*.*'
     	},
     	index: app + 'index.html',
     	client: app,
@@ -46,11 +52,15 @@ module.exports = function(){
 	    paths.sassStyle	 	= 'expanded';
 		paths.js.outputJS 	= 'builds/development/js/';
 		paths.outputImages 	= 'builds/development/images/';
+		paths.html.outputHTML	= 'builds/development/components/';
+		paths.images.outputImages	= 'builds/development/images/';
 	} else {
 	  	paths.css.outputCSS = 'builds/production/';
 	  	paths.sassStyle 	= 'compressed';
 	  	paths.js.outputJS 	= 'builds/production/js/';
 		paths.outputImages 	= 'builds/production/images/';
+		paths.html.outputHTML	= 'builds/production/components/';
+		paths.images.outputImages	= 'builds/production/images/';
 	}
 
 
