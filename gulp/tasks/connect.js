@@ -3,7 +3,7 @@ const gulp    = require('gulp'),
       nodemon = require('gulp-nodemon');
 
 
-gulp.task('server', function(){
+gulp.task('connect', function(){
   nodemon({
     script: 'server.js',
     ext: 'js',
