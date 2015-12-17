@@ -1,9 +1,12 @@
 
 ### my  ###
 node_modules/
-builds/production/vendor/
-builds/development/vendor/
-
+builds/
+app/images/
+bower_components/
+app/components/js/
+app/components/css/
+.sass*
 #################
 ## Eclipse
 #################
