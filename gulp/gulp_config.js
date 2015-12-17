@@ -5,18 +5,17 @@ var $ = require('gulp-load-plugins')({lazy: true});
 
 module.exports = function(){
 	var env;
-	var app = './app/';
+	var app = './app/components/';
   	var appCSS = './app/components/**/*.scss';
   	var vendorJS = './app/js/**/*.js';
   	var vendorCSS = './app/vendor/**/*.css'
 	var paths = {
 		js: {
-      		entry: app + 'components/**/*.js',
-      		vendor: app + 'vendor/**/*.js',
-      		all: app + '**/**/**/*.js'
+      		all: app + '**/*.js'
     	},
     	css: {
-
+    		entry: app + 'css/styles.scss',
+      		all: app + '**/*.scss'
     	},
     	names: {
       		css: 'styles.min.css',
@@ -43,13 +42,15 @@ module.exports = function(){
 	}
 
 	if (paths.env==='development') {
-		paths.css.outputCSS = 'builds/development/css/';
-	    paths.sassStyle = 'expanded';
-		paths.js.outputJS = 'builds/development/js/';
+		paths.css.outputCSS = 'builds/development/';
+	    paths.sassStyle	 	= 'expanded';
+		paths.js.outputJS 	= 'builds/development/js/';
+		paths.outputImages 	= 'builds/development/images/';
 	} else {
-	  	paths.css.outputCSS = 'builds/production/css/';
-	  	paths.sassStyle = 'compressed';
-	  	paths.js.outputJS = 'builds/production/js/';
+	  	paths.css.outputCSS = 'builds/production/';
+	  	paths.sassStyle 	= 'compressed';
+	  	paths.js.outputJS 	= 'builds/production/js/';
+		paths.outputImages 	= 'builds/production/images/';
 	}
 
 
