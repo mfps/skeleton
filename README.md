@@ -5,8 +5,8 @@ $ npm install
 $ gulp
 ```
 runs js, styles, html, images, connect, watcher
- - js (ES6 to ES5, canncat, uglify and minification)
- - styles (sass to css, conncat, autoprefixer and minification)
+ - js (ES6 to ES5, concat, uglify and minification)
+ - styles (sass to css, concat, autoprefixer and minification)
  - html (minification)
  - connect start express server with nodemon
  - watches over changes in js, styles and html
