@@ -1,10 +1,10 @@
-var gulp		= require('gulp'),
-    gutil 		= require('gulp-util'),
-    config 		= require('../gulp_config')(), // Relative to this file
-    sass 		= require('gulp-sass'),
-    connect 	= require('gulp-connect'),
-    please 		= require('gulp-pleeease'),
-    sourcemaps  = require('gulp-sourcemaps');
+const	gulp		= require('gulp'),
+    	gutil 		= require('gulp-util'),
+    	config 		= require('../gulp_config')(), // Relative to this file
+    	sass 		= require('gulp-sass'),
+    	connect 	= require('gulp-connect'),
+	    please 		= require('gulp-pleeease'),
+	    sourcemaps  = require('gulp-sourcemaps');
 
 
 gulp.task('styles', function() {

@@ -35,7 +35,7 @@ module.exports = function(){
       		}
     	},
     	images: {
-    		all: app + 'images/**/*.*'
+    		all: 'app/images/**/*.*'
     	},
     	index: app + 'index.html',
     	client: app,
